@@ -3,7 +3,12 @@ include 'db_init.php';
 require_once 'vendor/autoload.php';
 session_start();
 
-$yourApiKey = 'sk-d10d31971a4d432cbee3556119cb1013';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
+$yourApiKey = $_ENV['QWEN_API'];
 
 if (!isset($_SESSION['google_loggedin'])) {
     header('Location: login.php');

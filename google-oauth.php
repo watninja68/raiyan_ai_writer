@@ -4,14 +4,16 @@ session_start();
 
 // Include the Google API Client Library
 require_once 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Google OAuth Configuration
-$google_oauth_client_id = '1067420833334-om2crruaj1tljm1r7ceankt663effbni.apps.googleusercontent.com';
-$google_oauth_client_secret = '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';
+$google_oauth_client_id = $_ENV['GOOGLE_CLIENT_ID'];
+$google_oauth_client_secret = $_ENV['GOOGLE_CLIENT_SECRET'];
 // Make sure this matches EXACTLY with what's in Google Cloud Console
 $google_oauth_redirect_uri = 'http://localhost/ai_writer_sample/google-oauth.php';
 
