@@ -1,3 +1,3 @@
 <?php
-var_dump(is_readable('/app/.env'));
+var_dump(is_readable('.env'));
 ?>
