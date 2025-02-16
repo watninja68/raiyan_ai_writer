@@ -1,5 +1,5 @@
 <?php
-$host = "test-1_test"; // Change to "localhost" if needed
+$host = "127.0.0.1"; // Change to "localhost" if needed
 $dbname = "chat_db";
 $port = 3306; // Default MySQL port
 $dbUser = "root"; 
