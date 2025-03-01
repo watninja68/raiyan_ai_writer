@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=3.0">
-    <title>AI Prompt Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -44,10 +44,13 @@
                 </button>
                 <h1
                     class="text-2xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    AI Prompt Generator </h1>
+                    Related Keyword Finder </h1>
+                <button
+                    class="bg-cyan-500/80 px-4 py-2 dark:text-white rounded-lg hover:bg-cyan-400/80 transition-all duration-300 glow">New
+                    Search</button>
             </div>
 
-            <div class="flex-1">
+            <div class="flex flex-1 gap-2">
 
                 <!-- Main Chat Section (60% width) -->
                 <main
@@ -63,10 +66,7 @@
                     <!-- Quick Start Cards (Visible by Default) -->
                     <div id="quick-start-cards" class="flex-1 overflow-y-auto mt-2 pb-2 md:pb-0 scrollbar-thin"
                         style="max-height: calc(100vh - 250px);">
-                        <div class="grid grid-cols-1 gap-6 px-2">
-                          
 
-                        </div>
                     </div>
 
                     <div class="sticky bottom-0 flex items-center gap-x-2">
@@ -74,7 +74,7 @@
                         <!-- Custom Expanding Input -->
                         <div id="chat-input" contenteditable="true" role="textbox"
                             class="md:w-[93%] w-[82%] min-h-[4rem] dark:text-black min-w-[15ch] p-3 rounded-xl bg-transparent text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400"
-                            data-placeholder="Describe your prompt needs..."></div>
+                            data-placeholder="Enter a topic or keyword..."></div>
 
                         <!-- Send Button with Icon -->
                         <button id="send-button" onclick="sendMessage()"
@@ -87,12 +87,59 @@
 
 
                 </main>
+
+                <!-- Sidebar (40% width) -->
+                <aside id="chatSidebar"
+                    class="chatSidebar md:w-1/3 bg-gray-800 dark:bg-white md:relative border-r md:block hidden rounded border-gray-700 backdrop-blur-md p-4 flex h-[80%] flex-col">
+                    <!-- Fixed Search Bar -->
+                    <div class="sticky top-0 bg-gray-800/70 dark:bg-white backdrop-blur-md z-10">
+                        <input type="text" placeholder="Search..."
+                            class="w-full p-2 rounded-lg bg-gray-700/50 dark:text-black dark:bg-white dark:border-black text-white border border-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500  dark:focus:ring-black transition-all duration-300">
+                    </div>
+                </aside>
             </div>
         </div>
     </div>
 
     <script src="scripts/script.js"></script>
-    
+    <script>
+
+
+        // Function to handle sending a message
+        function sendMessage() {
+            const chatInput = document.getElementById('chat-input');
+            const message = chatInput.innerText.trim();
+            document.getElementById('quick-start-cards').classList.add('hidden');
+            document.getElementById('chat-content').classList.remove('hidden');
+
+            if (message) {
+                // Add user's message to the chat
+                addMessage('You', message);
+
+                // Simulate AI response (replace with actual API call in a real app)
+                setTimeout(() => {
+                    addMessage('AI', `This is a response to: "${message}"`);
+                }, 1000);
+
+                // Clear the input field
+                chatInput.innerText = ""; // Clear input
+                chatInput.style.height = "auto"; // Reset height
+            }
+        }
+
+       
+
+        // Event listener for the send button
+        document.getElementById('send-button').addEventListener('click', sendMessage);
+
+        // Event listener for pressing Enter in the input field
+        document.getElementById('chat-input').addEventListener('keypress', (event) => {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 
 </html>
