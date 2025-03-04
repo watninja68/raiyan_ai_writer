@@ -113,57 +113,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
 // Retrieve conversation history for display
 $chatHistory = getConversationHistory($pdo, session_id(), $conversationId, $userId);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <style>
-        /* Existing placeholder style */
-        #chat-input:empty:before {
-            content: attr(data-placeholder);
-            color: #9ca3af;
-            pointer-events: none;
-            display: block;
-        }
-        /* Chat message styling (taken from the chat ref) */
-        .message-user {
-            border-radius: 1rem;
-            padding: 0.75rem 1rem;
-            max-width: 80%;
-            margin-left: auto;
-            background: linear-gradient(to right, #3b82f6, #2563eb);
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .message-assistant {
-            border-radius: 1rem;
-            padding: 0.75rem 1rem;
-            max-width: 80%;
-            margin-right: auto;
-            background: rgba(31, 41, 55, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #e5e7eb;
-            margin-bottom: 1rem;
-        }
-    </style>
-</head>
-
-<body class="text-white">
-
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+<?php $pageTitle = "One Click Article"; ?>
+<?php require_once 'layout/header.php'; ?>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
     <div id="mainContent" class="main-content h-screen md:p-4 overflow-hidden md:ml-64">
+         <!-- Header -->
+         <?php require_once 'layout/main-header.php'; ?> 
         <div class="p-8">
             <div class="mb-10">
                 <h1 class="text-2xl font-bold mb-2">One Click Article Wizard</h1>
@@ -204,8 +161,4 @@ $chatHistory = getConversationHistory($pdo, session_id(), $conversationId, $user
 
         </div>
     </div>
-
-    <script src="scripts/script.js"></script>
-</body>
-
-</html>
+    <?php require_once 'layout/footer.php'; ?>

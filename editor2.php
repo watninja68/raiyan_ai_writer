@@ -319,24 +319,16 @@ img {
 <body class="text-white">
   <div class="flex flex-col md:flex-row">
 
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
     <!-- Main Content -->
     <main id="mainContent" class="main-content flex-1 md:ml-64 md:p-6">
+        <!-- Header -->
+        <?php require_once 'layout/main-header.php'; ?> 
 
       <!-- Breadcrumb -->
-      <nav class="flex pb-6" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-2">
-          <li>
-            <div class="flex items-center">
-              <!-- <i class="fas fa-chevron-right text-gray-400"></i> -->
-              <a href="#" class="ml-2 text-sm font-medium dark:text-black text-gray-300 hover:text-white">
-                Editor</a>
-            </div>
-          </li>
-        </ol>
-      </nav>
+      <?php include 'breadcrumb.php'; ?>
 
       <!-- Main Page -->
      

@@ -1,42 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Output"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Output AI</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-</head>
-
-<body class="text-white">
     <div class="flex flex-col md:flex-row">
 
-        <!-- Sidebar Placeholder -->
-        <div id="sidebar-placeholder"></div>
+        <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
         <!-- Main Content -->
         <main id="mainContent" class="main-content flex-1 md:ml-64 md:p-6">
+            <!-- Header -->
+            <?php require_once 'layout/main-header.php'; ?> 
 
             <!-- Breadcrumb -->
-            <nav class="flex pb-6" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-2">
-                    <li>
-                        <div class="flex items-center">
-                            <i class="fas  dark:text-black fa-chevron-right text-gray-400"></i>
-                            <a href="#"
-                                class="ml-2 text-sm font-medium dark:text-black text-gray-300 hover:text-white">AI
-                                Assistance</a>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
+            <?php include 'breadcrumb.php'; ?>
 
             <!-- Main Page -->
             <div class=" p-6">
@@ -76,7 +52,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
                     <!-- Card 1 -->
                     <div
-                        class="relative bg-white/10 dark:from-gray-400/10 dark:to-transparent border border-gray-300 p-5 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 transform hover:scale-105 hover:rotate-0 ">
+                        class="relative bg-white/10 dark:from-gray-400/10 dark:to-transparent border-gray-300 p-5 rounded-2xl shadow-lg border hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 transform hover:scale-105 hover:rotate-0 ">
                         <!-- Head Section -->
                         <div class="mb-4">
                             <div class="flex justify-end space-x-3">
@@ -131,7 +107,7 @@
                     </div>
                     <!-- Card 2 -->
                     <div
-                        class="relative bg-white/10 dark:from-gray-400/10 dark:to-transparent border border-gray-300 p-5 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 transform hover:scale-105 hover:rotate-0 ">
+                        class="relative bg-white/10 dark:from-gray-400/10 dark:to-transparent border border-gray-300 p-5 rounded-2xl shadow-lg hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 transform hover:scale-105 hover:rotate-0 ">
                         <!-- Head Section -->
                         <div class="mb-4">
                             <div class="flex justify-end space-x-3">
@@ -180,7 +156,7 @@
 
                     <!-- Card 3 -->
                     <div
-                        class="relative bg-white/10 dark:from-gray-400/10 dark:to-transparent border border-gray-300 p-5 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 transform hover:scale-105 hover:rotate-0 ">
+                        class="relative bg-white/10 dark:from-gray-400/10 dark:to-transparent border border-gray-300 p-5 rounded-2xl shadow-lg hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 transform hover:scale-105 hover:rotate-0 ">
                         <!-- Head Section -->
                         <div class="mb-4">
                             <div class="flex justify-end space-x-3">
@@ -232,8 +208,4 @@
 
         </main>
     </div>
-
-    <script src="scripts/script.js"></script>
-</body>
-
-</html>
+    <?php require_once 'layout/footer.php'; ?>

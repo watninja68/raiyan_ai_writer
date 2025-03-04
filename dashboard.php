@@ -1,46 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Dashboard"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-</head>
-
-<body class="text-white">
     <div class="flex flex-col md:flex-row">
 
-        <!-- Sidebar Placeholder -->
-        <div id="sidebar-placeholder"></div>
+         <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <main id="mainContent" class="main-content flex-1 md:p-6">
-            <!-- Breadcrumb -->
-            <nav class="flex pb-6 justify-between" aria-label="Breadcrumb">
-                <ol class="inline-flex self-start items-center space-x-1 md:space-x-2">
-                    <li class="inline-flex items-center">
-                        <a href="#" class="inline-flex dark:text-black items-center text-sm font-medium text-gray-300 hover:text-white">
-                            <i class="fas fa-home mr-2"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <div class="flex items-center dark:text-black">
-                            <i class="fas fa-chevron-right dark:text-black text-gray-400"></i>
-                            <a href="#" class="ml-2 text-sm dark:text-black font-medium text-gray-300 hover:text-white">Dashboard</a>
-                        </div>
-                    </li>
-                </ol>
-
-            </nav>
+        <main id="mainContent" class="main-content flex-1 md:p-6 ">
+            <!-- Header -->
+             <?php require_once 'layout/main-header.php'; ?> 
+             <!-- Breadcrumb -->
+             <?php include 'breadcrumb.php'; ?>
+            
 
             <!-- Dashboard Cards -->
             <div class=" mb-8 px-5">
@@ -58,7 +30,7 @@
 
                     <!-- AI Tools -->
                     <div
-                        class="p-6 bg-white/10 self-start dark:from-gray-400/10 dark:to-transparent rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 group">
+                        class="p-6 bg-white/10 self-start dark:shadow-none dark:from-gray-400/10 dark:to-transparent rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 group">
                         <div class="mb-4">
                             <h2
                                 class="text-xl font-bold text-white dark:text-black dark:group-hover:text-black group-hover:text-cyan-400 transition-all duration-300">
@@ -71,19 +43,19 @@
                         </div>
                         <div class="space-y-3">
                             <a href="#"
-                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-black hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
                                 <span>Article Wizard</span>
                                 <span
                                     class="text-gray-500 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:translate-x-1">&#x2197;</span>
                             </a>
                             <a href="aiassistance.html"
-                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
                                 <span>AI Assistant</span>
                                 <span
                                     class="text-gray-500 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:translate-x-1">&#x2197;</span>
                             </a>
                             <a href="aichat.html"
-                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
                                 <span>AI Chat</span>
                                 <span
                                     class="text-gray-500 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:translate-x-1">&#x2197;</span>
@@ -93,7 +65,7 @@
 
                     <!-- AI Assistants -->
                     <div
-                        class="p-6 self-start bg-white/10 dark:from-gray-400/10 dark:to-transparent rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 group">
+                        class="p-6 self-start dark:shadow-none bg-white/10 dark:from-gray-400/10 dark:to-transparent rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 hover:shadow-cyan-400/50 transition-all duration-300 group">
                         <div class="mb-4">
                             <h2
                                 class="text-xl font-bold text-white dark:text-black dark:group-hover:text-black group-hover:text-cyan-400 transition-all duration-300">
@@ -106,19 +78,19 @@
                         </div>
                         <div class="space-y-3">
                             <div
-                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
                                 <span>Headline</span>
                                 <span
                                     class="text-gray-500 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:translate-x-1">&#x2197;</span>
                             </div>
                             <div
-                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
                                 <span>Facebook Ad Text</span>
                                 <span
                                     class="text-gray-500 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:translate-x-1">&#x2197;</span>
                             </div>
                             <div
-                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+                                class="flex justify-between items-center text-white dark:text-black border-b border-gray-700 pb-2 dark:hover:text-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
                                 <span>Google Ad Text</span>
                                 <span
                                     class="text-gray-500 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:translate-x-1">&#x2197;</span>
@@ -154,12 +126,8 @@
 
             <!-- Add the heading above the section -->
             <h2 class="text-xl font-bold text-white dark:text-black mt-10 px-5">Recent Activities</h2>
-            <!-- Sidebar Placeholder -->
-            <div id="ai-tool-section"></div>
+             <!-- AI Tool Section -->
+        <?php include 'layout/dashboard-ai-tool-section.php'; ?>
         </main>
     </div>
-
-    <script src="scripts/script.js"></script>
-</body>
-
-</html>
+    <?php require_once 'layout/footer.php'; ?>

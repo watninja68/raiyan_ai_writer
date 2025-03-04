@@ -1,42 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Contact Us"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Output AI</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-</head>
-
-<body class="text-white">
     <div class="flex flex-col md:flex-row">
 
-        <!-- Sidebar Placeholder -->
-        <div id="sidebar-placeholder"></div>
+        <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
         <!-- Main Content -->
         <main id="mainContent" class="main-content flex-1 md:ml-64 md:p-6">
+             <!-- Header -->
+            <?php require_once 'layout/main-header.php'; ?> 
 
             <!-- Breadcrumb -->
-            <nav class="flex pb-6" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-2">
-                    <li>
-                        <div class="flex items-center">
-                            <i class="fas dark:text-black fa-chevron-right text-gray-400"></i>
-                            <a href="#"
-                                class="ml-2 text-sm font-medium dark:text-black text-gray-300 dark:text-black hover:text-white">Contact Us
-                                </a>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
+            <?php include 'breadcrumb.php'; ?>
             <!-- Header -->
             <div class="p-6 mb-8">
                 <h1 class="text-2xl font-bold"> Contact Us</h1>
@@ -56,28 +32,28 @@
                     <form class="space-y-6">
                         <!-- Name Input -->
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 dark:text-black">Your
+                            <label for="name" class="block text-sm font-medium text-gray-300 dark:text-black">
                                 Name</label>
                             <input type="text" id="name" name="name" required
-                                class="mt-1 w-full p-3 rounded-lg bg-gray-800/50 border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400 dark:placeholder:text-white "
+                                class="mt-1 w-full bg-gray-700 dark:bg-gray-600 border dark:text-white border-gray-600 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400 "
                                 placeholder="John Doe">
                         </div>
 
                         <!-- Email Input -->
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 dark:text-black">Your
+                            <label for="email" class="block text-sm font-medium text-gray-300 dark:text-black">
                                 Email</label>
                             <input type="email" id="email" name="email" required
-                                class="mt-1 w-full p-3 rounded-lg bg-gray-800/50 border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400 dark:placeholder:text-white "
+                                class="mt-1 w-full p-3 bg-gray-700 dark:bg-gray-600 border dark:text-white border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400"
                                 placeholder="johndoe@example.com">
                         </div>
 
                         <!-- Message Input -->
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 dark:text-black">Your
+                            <label for="message" class="block text-sm font-medium text-gray-300 dark:text-black">
                                 Message</label>
                             <textarea id="message" name="message" rows="5" required
-                                class="mt-1 w-full p-3 rounded-lg bg-gray-800/50 border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400 dark:placeholder:text-white "
+                                class="mt-1 w-full p-3 bg-gray-700 dark:bg-gray-600 border dark:text-white border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400"
                                 placeholder="Write your message here..."></textarea>
                         </div>
 
@@ -118,8 +94,4 @@
 
         </main>
     </div>
-
-    <script src="scripts/script.js"></script>
-</body>
-
-</html>
+    <?php require_once 'layout/footer.php'; ?>

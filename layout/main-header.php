@@ -1,5 +1,5 @@
  <!-- Header Section -->
- <header class="header flex justify-between sticky top-0 items-center">
+ <header class="sticky top-0 z-40 w-full bg-[rgba(30,41,59,0.7)] backdrop-blur-md border-b border-[rgba(255,255,255,0.1)] p-4 rounded-xl mb-6 flex justify-between items-center dark:bg-[rgba(255,255,255,0.7)] dark:border-b dark:border-[rgba(0,0,0,0.1)]">
     <!-- Hamburger Menu for Mobile -->
     <button id="menu-button" onclick="toggleSidebar()" class="md:hidden bg-cyan-500 px-4 py-2 rounded glow">
         <i class="fas fa-bars"></i>
@@ -16,11 +16,12 @@
         <!-- Dark/Light Mode Toggle -->
         <div class="relative inline-block w-10 mr-2 align-middle select-none">
             <input type="checkbox" name="toggle" id="toggle"
-                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                class="absolute block w-6 h-6 peer checked:right-0 rounded-full bg-white dark:bg-cyan-500 border-4 border-gray-300 appearance-none cursor-pointer"
                 onclick="toggleDarkMode()" />
             <label for="toggle"
-                class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                class="toggle-label block overflow-hidden peer-checked:text-bg-900 h-6 rounded-full bg-gray-300 cursor-pointer"></label>
         </div>
+
         <!-- Profile Dropdown -->
         <div class="relative">
             <button id="profile-button" onclick="toggleProfileDropdown()"

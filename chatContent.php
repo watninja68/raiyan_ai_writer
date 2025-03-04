@@ -1,52 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Contents Calender"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-    <style>
-        #chat-input:empty:before {
-            content: attr(data-placeholder);
-            color: #9ca3af;
-            /* Light gray */
-            pointer-events: none;
-            display: block;
-        }
-                /* Typewriter effect */
-                @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
-        .typewriter {
-            
-            border-right: 0.15em solid white; /* Cursor effect */
-            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-    </style>
-</head>
-
-<body class="text-white">
-
-
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
 
     <div id="mainContent" class="main-content h-screen md:p-4 overflow-hidden md:ml-64">
-
+        <!-- Header -->
+        <?php require_once 'layout/main-header.php'; ?> 
         <div class="flex flex-col glass-card px-3 flex-1 md:h-screen">
 
             <!-- Header -->
@@ -97,7 +58,7 @@
 
                 <!-- Main Chat Section (60% width) -->
                 <main
-                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col rounded overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
+                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col rounded overflow-hidden border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
 
                     <!-- Quick Start Cards (Visible by Default) -->
                     <div id="quick-start-cards" class="flex-1 overflow-y-auto mt-2 pb-2 md:pb-0 scrollbar-thin"

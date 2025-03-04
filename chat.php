@@ -242,7 +242,12 @@ $isNewConversation = empty($chatHistory);
 </head>
 
 <body class="text-white">
+    <!-- Sidebar -->
+    <?php require_once 'layout/sidebar.php'; ?>
     <div id="mainContent" class="main-content h-screen md:p-4 overflow-hidden md:ml-0">
+         <!-- Header -->
+         <?php require_once 'layout/main-header.php'; ?> 
+
         <div class="flex flex-col glass-card pl-3 flex-1 h-screen">
             <!-- Header -->
             <div class="flex justify-between p-2 items-center border-b dark:border-none border-gray-700/50">
@@ -262,7 +267,7 @@ $isNewConversation = empty($chatHistory);
             <div class="flex flex-1">
                 <!-- Main Chat Section (60% width) -->
                 <main
-                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col rounded overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
+                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
 
                     <!-- Content Area -->
                     <div id="chat-content" class="flex-1 overflow-y-auto scrollbar-thin py-4 space-y-4 <?php echo $isNewConversation ? 'hidden' : ''; ?>"
@@ -338,7 +343,7 @@ $isNewConversation = empty($chatHistory);
                                     Capabilities
                                 </h2>
                                 <div class="md:flex space-y-4 md:space-y-0 md:gap-x-4">
-                                    <div class="p-3 glass-card dark:border-black dark:bg-white dark:border-black rounded-lg shadow-md">
+                                    <div class="p-3 glass-card dark:border-black dark:bg-white rounded-lg shadow-md">
                                         <p class="text-gray-400 text-sm dark:text-gray-800">Create engaging blog content for any niche</p>
                                     </div>
                                     <div class="p-3 glass-card dark:border-black dark:bg-white rounded-lg shadow-md">
@@ -373,7 +378,7 @@ $isNewConversation = empty($chatHistory);
 
                 <!-- Sidebar (40% width) -->
                 <aside id="chatSidebar"
-                    class="chatSidebar md:w-1/3 bg-gray-800 dark:bg-white md:relative border-r md:block hidden rounded border-gray-700 backdrop-blur-md p-4 flex h-[80%] flex-col">
+                    class="chatSidebar md:w-1/3 bg-gray-800 dark:bg-white md:relative border-r hidden rounded border-gray-700 backdrop-blur-md p-4 md:flex h-[80%] flex-col">
                     <!-- Fixed Search Bar -->
                     <div class="sticky top-0 bg-gray-800/70 dark:bg-white backdrop-blur-md z-10">
                         <input type="text" id="search-conversation" placeholder="Search conversations..."

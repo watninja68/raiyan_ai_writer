@@ -135,75 +135,15 @@ $stmt->execute([':user_id' => $userId]);
 $conversations = $stmt->fetchAll(PDO::FETCH_COLUMN);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <style>
-        #chat-input:empty:before {
-            content: attr(data-placeholder);
-            color: #9ca3af;
-            /* Light gray */
-            pointer-events: none;
-            display: block;
-        }
-        
-        /* Custom scrollbar styles */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(31, 41, 55, 0.5);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: rgba(59, 130, 246, 0.5);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(59, 130, 246, 0.8);
-        }
-        
-        /* Message styling */
-        .message-user {
-            border-radius: 1rem;
-            padding: 0.75rem 1rem;
-            max-width: 80%;
-            margin-left: auto;
-            background: linear-gradient(to right, #3b82f6, #2563eb);
-            color: white;
-        }
-        
-        .message-assistant {
-            border-radius: 1rem;
-            padding: 0.75rem 1rem;
-            max-width: 80%;
-            margin-right: auto;
-            background: rgba(31, 41, 55, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #e5e7eb;
-        }
-    </style>
-</head>
-
-<body class="text-white">
-
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+<?php $pageTitle = "AI Related Keyword"; ?>
+<?php require_once 'layout/header.php'; ?>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
     <div id="mainContent" class="main-content h-screen md:p-4 overflow-hidden md:ml-64">
+         <!-- Header -->
+         <?php require_once 'layout/main-header.php'; ?> 
+
 
         <div class="flex flex-col glass-card pl-3 flex-1 h-screen">
 
@@ -226,7 +166,7 @@ $conversations = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
                 <!-- Main Chat Section (60% width) -->
                 <main
-                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col rounded overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
+                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
 
                     <!-- Content Area -->
                     <div id="chat-content" class="flex-1 overflow-y-auto scrollbar-thin py-4 space-y-4 <?php echo $isNewConversation ? 'hidden' : ''; ?>"
@@ -302,7 +242,7 @@ $conversations = $stmt->fetchAll(PDO::FETCH_COLUMN);
                                     Capabilities
                                 </h2>
                                 <div class="md:flex space-y-4 md:space-y-0 md:gap-x-4">
-                                    <div class="p-3 glass-card dark:border-black dark:bg-white dark:border-black rounded-lg shadow-md">
+                                    <div class="p-3 glass-card dark:border-black dark:bg-white rounded-lg shadow-md">
                                         <p class="text-gray-400 text-sm dark:text-gray-800">Discover trending keywords in any niche</p>
                                     </div>
                                     <div class="p-3 glass-card dark:border-black dark:bg-white rounded-lg shadow-md">
@@ -339,7 +279,7 @@ $conversations = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
                 <!-- Sidebar (40% width) -->
                 <aside id="chatSidebar"
-                    class="chatSidebar md:w-1/3 bg-gray-800 dark:bg-white md:relative border-r md:block hidden rounded border-gray-700 backdrop-blur-md p-4 flex h-[80%] flex-col">
+                    class="chatSidebar md:w-1/3 bg-gray-800 dark:bg-white md:relative border-r hidden rounded border-gray-700 backdrop-blur-md p-4 md:flex h-[80%] flex-col">
                     <!-- Fixed Search Bar -->
                     <div class="sticky top-0 bg-gray-800/70 dark:bg-white backdrop-blur-md z-10">
                         <input type="text" id="search-conversation" placeholder="Search..."
@@ -437,3 +377,4 @@ $conversations = $stmt->fetchAll(PDO::FETCH_COLUMN);
 </body>
 
 </html>
+<?php //require_once 'layout/footer.php'; ?>

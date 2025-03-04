@@ -1,47 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Gift"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-</head>
-
-<body class="text-white">
     <div class="flex flex-col md:flex-row">
 
-        <!-- Sidebar Placeholder -->
-        <div id="sidebar-placeholder"></div>
+       <!-- Sidebar -->
+       <?php require_once 'layout/sidebar.php'; ?>
 
         <!-- Main Content -->
         <main id="mainContent" class="main-content md:p-6 flex-1 ">
+            <!-- Header -->
+            <?php require_once 'layout/main-header.php'; ?> 
 
             <!-- Breadcrumb -->
-            <nav class="flex pb-6" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-2">
-                    <!-- <li class="inline-flex items-center">
-                        <a href="#" class="inline-flex items-center text-sm font-medium text-gray-300 hover:text-white">
-                            <i class="fas fa-home mr-2"></i>
-                            Home
-                        </a>
-                    </li> -->
-                    <li>
-                        <div class="flex items-center">
-                            <i class="fas dark:text-black fa-chevron-right text-gray-400"></i>
-                            <a href="#" class="ml-2 text-sm dark:text-black font-medium text-gray-300 hover:text-white">Gift and
-                                Offer</a>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
+            <?php include 'breadcrumb.php'; ?>
 
 
             <div class="container mx-auto px-4 py-10">
@@ -51,7 +22,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Offer 1 -->
                     <div onclick="toggleDetails('offer1')"
-                        class="p-5 glass-card cursor-pointer rounded-lg hover:shadow-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300 group relative transform hover:-translate-y-2 h-full">
+                        class="p-5 glass-card cursor-pointer dark:shadow-none dark:border dark:border-gray-700 hover:shadow-lg hover:border-cyan-400 transition-all duration-300 group relative transform hover:-translate-y-2 h-full">
 
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-all duration-500">
@@ -76,7 +47,7 @@
 
                     <!-- Offer 2 -->
                     <div onclick="toggleDetails('offer2')"
-                        class="p-5 glass-card cursor-pointer rounded-lg hover:shadow-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300 group relative transform hover:-translate-y-2 h-full">
+                        class="p-5 glass-card cursor-pointer dark:shadow-none dark:border dark:border-gray-700 hover:shadow-lg hover:border-cyan-400 transition-all duration-300 group relative transform hover:-translate-y-2 h-full">
 
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-all duration-500">
@@ -101,7 +72,7 @@
 
                     <!-- Offer 3 -->
                     <div onclick="openModal('VIP Lounge Access', 'Experience exclusive events and behind-the-scenes content Experience exclusive events and behind-the-scenes content Experience exclusive events and behind-the-scenes content')"
-                        class="p-5 glass-card cursor-pointer rounded-lg hover:shadow-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300 group relative transform hover:-translate-y-2 h-full">
+                        class="p-5 glass-card cursor-pointer dark:shadow-none dark:border dark:border-gray-700 hover:shadow-lg hover:border-cyan-400 transition-all duration-300 group relative transform hover:-translate-y-2 h-full">
 
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-all duration-500">
@@ -128,7 +99,7 @@
 
                 <!-- Modal -->
                 <div id="offerModal"
-                    class="fixed z-50 inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center hidden">
+                    class="fixed z-50 inset-0 bg-black/60  dark:text-white backdrop-blur-md flex items-center justify-center hidden">
                     <div class="bg-gray-900 p-8 rounded-lg shadow-xl transform scale-90 opacity-0 transition-all duration-300 w-2/3 relative"
                         id="modalContent">
                         <button onclick="closeModal()"
@@ -168,8 +139,4 @@
 
         </main>
     </div>
-
-    <script src="scripts/script.js"></script>
-</body>
-
-</html>
+<?php require_once 'layout/footer.php'; ?>

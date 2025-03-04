@@ -1,57 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Editor"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <style>
-        @keyframes draw {
-            from {
-                stroke-dashoffset: 100;
-            }
-
-            to {
-                stroke-dashoffset: 40;
-            }
-        }
-
-        .animate-draw {
-            animation: draw 2s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 1s ease-in forwards;
-        }
-    </style>
-</head>
-
-<body class="text-white">
     <div class="flex flex-col md:flex-row">
 
-        <!-- Sidebar Placeholder -->
-        <div id="sidebar-placeholder"></div>
+        <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <main id="mainContent" class="main-content h-screen overflow-hidden flex-1 md:ml-64 ">
-
+        <main id="mainContent" class="main-content h-screen overflow-hidden flex-1 md:p-6 md:ml-64 ">
+           <!-- Header -->
+           <?php require_once 'layout/main-header.php'; ?> 
+           <?php// include 'breadcrumb.php'; ?>
             <!-- Main Page -->
             <div class="md:flex overflow-y-auto h-[calc(100vh-110px)]">
 
@@ -352,3 +311,4 @@
 </body>
 
 </html>
+<?php //require_once 'layout/footer.php'; ?>

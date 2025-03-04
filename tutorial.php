@@ -1,40 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-</head>
-
-<body class="text-white">
+<?php $pageTitle = "Tutorial"; ?>
+<?php require_once 'layout/header.php'; ?>
+  
     <div class="flex flex-col md:flex-row">
-
-        <!-- Sidebar Placeholder -->
-        <div id="sidebar-placeholder"></div>
-
+        <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
         <!-- Main Content -->
         <main id="mainContent" class="main-content flex-1 md:p-6">
+            <!-- Header -->
+        <?php require_once 'layout/main-header.php'; ?> 
         
             <!-- Breadcrumb -->
-            <nav class="flex pb-6" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-2">
-                    <li>
-                        <div class="flex items-center">
-                            <i class="fas fa-chevron-right  dark:text-black text-gray-400"></i>
-                            <a href="#" class="ml-2 text-sm dark:text-black font-medium text-gray-300 hover:text-white">Tutorial</a>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
+            <?php include 'breadcrumb.php'; ?>
 
             <div class="container mx-auto">
                 <!-- Video Preview Section -->
@@ -126,22 +102,4 @@
 
         </main>
     </div>
-    <!-- JavaScript for Dynamic Video Loading -->
-    <script>
-        document.querySelectorAll('.video-card').forEach(card => {
-            card.addEventListener('click', function () {
-                let videoSrc = this.getAttribute('data-video');
-                document.getElementById('videoPlayer').src = videoSrc;
-            });
-        });
-        document.querySelectorAll('.video-card').forEach(card => {
-            card.addEventListener('click', () => {
-                window.scrollTo({ top: 70, behavior: 'smooth' });
-            });
-        });
-    </script>
-    <script src="scripts/script.js"></script>
-
-</body>
-
-</html>
+    <?php require_once 'layout/footer.php'; ?>
