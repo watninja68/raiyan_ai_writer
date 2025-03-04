@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Affiliate"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Output AI</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="styles/custom.css">
-  <script>
-
-  </script>
-</head>
-
-<body class="text-white">
   <div class="flex flex-col md:flex-row">
 
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
     <!-- Main Content -->
     <main id="mainContent" class="main-content flex-1 md:ml-64 md:p-6">
+      <!-- Header -->
+      <?php require_once 'layout/main-header.php'; ?> 
 
       <!-- Breadcrumb -->
       <nav class="flex justify-between px-2" aria-label="Breadcrumb">
@@ -38,15 +25,10 @@
         <!-- Withdrawal Button -->
         <div class="text-center">
           <button
-                    class="bg-cyan-500/80 px-4 py-2 dark:text-white rounded-lg hover:bg-cyan-400/80 transition-all duration-300 glow">
+                    class="bg-cyan-500/80 px-4 py-2 cursor-pointer dark:text-white rounded-lg hover:bg-cyan-400/80 transition-all duration-300 glow">
                     Request Withdrawal</button>
         </div>
       </nav>
-
-      <!-- Main Page -->
-
-
-
 
       <!-- Main Section -->
       <div class=" p-6 ">
@@ -68,7 +50,7 @@
                 class="flex-1 p-3 rounded-l-lg bg-gray-800/50 dark:text-white border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 placeholder:text-gray-400">
               
                 <button onclick="copyReferralLink()"
-                class="bg-cyan-500/80 px-4 py-3 rounded-r-lg text-white dark:text-white hover:bg-cyan-400/80  ">
+                class="bg-cyan-500/80 px-4 py-3 cursor-pointer rounded-r-lg text-white dark:text-white hover:bg-cyan-400/80  ">
                 Copy Link
               </button>
 
@@ -156,16 +138,4 @@
     </main>
   </div>
 
-  <script src="scripts/script.js"></script>
-  <script>
-    // Function to copy referral link
-    function copyReferralLink() {
-      const referralLink = document.getElementById('referral-link');
-      referralLink.select();
-      document.execCommand('copy');
-      alert('Referral link copied to clipboard!');
-    }
-  </script>
-</body>
-
-</html>
+  <?php require_once 'layout/footer.php'; ?>

@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "AI Prompt Generator"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=3.0">
-    <title>AI Prompt Generator</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-    <style>
-        #chat-input:empty:before {
-            content: attr(data-placeholder);
-            color: #9ca3af;
-            /* Light gray */
-            pointer-events: none;
-            display: block;
-        }
-    </style>
-</head>
-
-<body class="text-white">
-
-
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
 
     <div id="mainContent" class="main-content h-screen md:p-4 overflow-hidden md:ml-64">
+         <!-- Header -->
+         <?php require_once 'layout/main-header.php'; ?> 
+
 
         <div class="flex flex-col glass-card pl-3 flex-1 h-screen">
 
@@ -51,7 +28,7 @@
 
                 <!-- Main Chat Section (60% width) -->
                 <main
-                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col rounded overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
+                    class="flex-1 bg-gray-800 dark:bg-white flex flex-col overflow-hidden rounded border-gray-700 dark:border-gray-700 p-3 h-[80%] relative mb-10">
 
 
                     <!-- Content Area -->
@@ -91,8 +68,4 @@
         </div>
     </div>
 
-    <script src="scripts/script.js"></script>
-    
-</body>
-
-</html>
+    <?php require_once 'layout/footer.php'; ?>

@@ -1,6 +1,9 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']); // Get the current page name
+?>
 <!-- Sidebar -->
 <aside id="sidebar" onmouseover="expandOnHover()" onmouseleave="collapseOnLeave()"
-    class="sidebar bg-gray-800 p-4  flex flex-col z-50 space-y-3 md:h-full h-screen fixed transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+    class="sidebar bg-gray-800 p-4  flex flex-col z-50 space-y-3 md:h-full h-screen fixed transform -translate-x-full md:translate-x-0 transition-transform duration-300 ">
     <div class="flex item-center justify-between">
         <div class="flex justify-between item-center">
             <div class="" style="width: 40px; height: 45px;"><svg width="100%" height="100%"
@@ -48,85 +51,85 @@
         </div>
     </div>
     <nav class="flex flex-col pr-4 overflow-y-auto overflow-hidden">
-        <a href="dashboard.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="dashboard.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'dashboard.php' ? 'active' : '' ?>">
             <i class="fas fa-tachometer-alt text-lg w-6 text-center"></i>
             <span class="sidebar-text">Dashboard</span>
         </a>
         <div>
-            <button onclick="toggleSubMenu('submenu1'); setActive(this)" class="sidebar-link text-gray-300 hover:text-white w-full text-left">
+            <button onclick="toggleSubMenu('submenu1');" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white w-full text-left">
                 <i class="fas fa-magic text-lg w-6 text-center"></i>
                 <span class="sidebar-text">Blog Wizard</span>
                 <i class="fas sidebar-text fa-chevron-down ml-auto"></i>
             </button>
-            <div id="submenu1" class="sidebar-text-hidden w-[100%] submenu hidden flex flex-col pl-4 mt-2">
-                <a href="guidedArticle.html" class="submenu-link text-gray-400 hover:text-white">
+            <div id="submenu1" class="sidebar-text-hidden w-[100%] submenu hidden flexT flex-col pl-4 mt-2">
+                <a href="guidedArticle.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'guidedArticle.php' ? 'active' : '' ?>">
                     <span>Guided Content Creation
                     </span>
                 </a>
-                <a href="oneClickArticle.html" class="submenu-link text-gray-400 hover:text-white">
+                <a href="oneClickArticle.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'oneClickArticle.php' ? 'active' : '' ?>">
                     <span>One Click Content Creation</span>
                 </a>
             </div>
         </div>
-        <a href="aiassistance.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="aiassistance.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'aiassistance.php' ? 'active' : '' ?>">
             <i class="fas fa-robot text-lg w-6 text-center"></i>
             <span class="sidebar-text">AI Assistance</span>
         </a>
-        <a href="aichat.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="aichat.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'aichat.php' ? 'active' : '' ?>">
             <i class="fas fa-comments text-lg w-6 text-center"></i>
             <span class="sidebar-text">AI Chat</span>
         </a>
 
         <div>
-            <button onclick="toggleSubMenu('submenu2'); setActive(this);" class="sidebar-link text-gray-300 hover:text-white w-full text-left">
+            <button onclick="toggleSubMenu('submenu2'); setActive(this);" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white w-full text-left">
                 <i class="fas fa-tasks text-lg w-6 text-center"></i>
                 <span class="sidebar-text">Productivity</span>
                 <i class="fas fa-chevron-down sidebar-text ml-auto"></i>
             </button>
             <div id="submenu2" class="sidebar-text-hidden  hidden flex flex-col pl-4 mt-2">
-                <a href="chatContent.html" class="submenu-link text-gray-400 hover:text-white">
-                    <span class="">30 days Content Calender Maker
+                <a href="chatContent.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'chatContent.php' ? 'active' : '' ?>">
+                    <span class="">30 days Content Maker
                     </span>
                 </a>
-                <a href="chatRelatedKeyword.html" class="submenu-link text-gray-400 hover:text-white">
+                <a href="chatRelatedKeyword.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'chatRelatedKeyword.php' ? 'active' : '' ?>">
                     <span class="">Related keywords finder</span>
                 </a>
-                <a href="chatGrammer.html" class="submenu-link text-gray-400 hover:text-white">
+                <a href="chatGrammer.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'chatGrammer.php' ? 'active' : '' ?>">
                     <span class="">Grammar Improvement</span>
                 </a>
-                <a href="chatGenerator.html" class="submenu-link text-gray-400 hover:text-white">
+                <a href="chatGenerator.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'chatGenerator.php' ? 'active' : '' ?>">
                     <span class="">AI Prompt Generator</span>
                 </a>
-                <a href="chatTrending.html" class="submenu-link text-gray-400 hover:text-white">
+                <a href="chatTrending.php" class="dark:text-gray-700 dark:hover:bg-cyan-100 dark:hover:bg-opacity-10 dark:hover:text-gray-500 submenu-link text-gray-400 hover:text-white <?= $currentPage == 'chatTrending.php' ? 'active' : '' ?>">
                     <span class="">Trending Topic finder</span>
                 </a>
             </div>
         </div>
-        <a href="gift.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="gift.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'gift.php' ? 'active' : '' ?>">
             <i class="fas fa-gift text-lg w-6 text-center"></i>
             <span class="sidebar-text">Gift and Offer</span>
         </a>
-        <a href="tutorial.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="tutorial.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'tutorial.php' ? 'active' : '' ?>">
             <i class="fas fa-graduation-cap text-lg w-6 text-center"></i>
             <span class="sidebar-text">Tutorial</span>
         </a>
-        <a href="editor.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="editor.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'editor.php' ? 'active' : '' ?>">
             <i class="fas fa-edit text-lg w-6 text-center"></i>
             <span class="sidebar-text">Editor</span>
         </a>
-        <a href="output.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="output.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'output.php' ? 'active' : '' ?>">
             <i class="fas fa-file-export text-lg w-6 text-center"></i>
             <span class="sidebar-text">output</span>
         </a>
-        <a href="affiliate.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="affiliate.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'affiliate.php' ? 'active' : '' ?>">
             <i class="fas fa-hand-holding-usd text-lg w-6 text-center"></i>
-            <span class="sidebar-text">Earn as Affiliate Marketer</span>
+            <span class="sidebar-text">Earn as an Affiliate</span>
         </a>
-        <a href="support.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="support.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'support.php' ? 'active' : '' ?>">
             <i class="fas fa-ticket-alt text-lg w-6 text-center"></i>
             <span class="sidebar-text">Support Ticket</span>
         </a>
-        <a href="contactus.html" class="sidebar-link text-gray-300 hover:text-white" onclick="setActive(this)">
+        <a href="contactus.php" class="sidebar-link dark:text-gray-900 text-gray-300 hover:text-white <?= $currentPage == 'contactus.php' ? 'active' : '' ?>">
             <i class="fas fa-envelope text-lg w-6 text-center"></i>
             <span class="sidebar-text">contact Us</span>
         </a>

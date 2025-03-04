@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $pageTitle = "Guided Articles"; ?>
+<?php require_once 'layout/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="styles/custom.css">
-    <script>
-
-    </script>
-    <style>
-        #chat-input:empty:before {
-            content: attr(data-placeholder);
-            color: #9ca3af;
-            /* Light gray */
-            pointer-events: none;
-            display: block;
-        }
-    </style>
-</head>
-
-<body class="text-white">
-
-
-    <!-- Sidebar Placeholder -->
-    <div id="sidebar-placeholder"></div>
+   <!-- Sidebar -->
+        <?php require_once 'layout/sidebar.php'; ?>
 
 
     <div id="mainContent" class="main-content min-h-screen relative md:p-4 overflow-hidden md:ml-64">
+        <!-- Header -->
+        <?php require_once 'layout/main-header.php'; ?> 
+        <?php include 'breadcrumb.php'; ?>
         <div class="p-8">
             <div class="mb-6">
                 <h1 class="text-2xl font-bold mb-2">Article Wizard</h1>
@@ -180,3 +157,5 @@
 </body>
 
 </html>
+
+<?php //require_once 'layout/footer.php'; ?>
